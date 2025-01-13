@@ -1,0 +1,61 @@
+---
+config:
+  layout: fixed
+---
+flowchart TD
+ subgraph LLMGen["Question Creation"]
+        Generation["Create Questions Using LLMs<br>(Copilot, GPT, Claude)"]
+        GenTypes["Generate All Question Types"]
+        Easy["Level 1 Questions<br>(Elementary Difficulty)"]
+        Intermediate["Level 2 Questions<br>(Intermediate Difficulty)"]
+        Advanced["Level 3 Questions<br>(Advanced Difficulty)"]
+  end
+ subgraph FinalQuizzes["Process Quizzes"]
+        QuizAssembly["Assemble Final Quiz"]
+        QuizLevel1["Level 1 Quiz"]
+        QuizLevel2["Level 2 Quiz"]
+        QuizLevel3["Level 3 Quiz"]
+  end
+    RecruitTeachers["Recruit Teachers"] --> Generation
+    Generation --> GenTypes
+    GenTypes --> Easy & Intermediate & Advanced
+    Easy --> RefineSelection["Quiz Selection by Teachers & Refinement"]
+    Intermediate --> RefineSelection
+    Advanced --> RefineSelection
+    RefineSelection --> QuizAssembly & TeacherTesting["Teacher Testing<br>(TA Evaluation)"]
+    QuizAssembly --> QuizLevel1 & QuizLevel2 & QuizLevel3
+    QuizLevel1 --> StudentTesting["Student Testing<br>(TA Evaluation)"]
+    QuizLevel2 --> StudentTesting
+    QuizLevel3 --> StudentTesting
+    StudentTesting --> StudentFeedback["Student Feedback"]
+    TeacherTesting --> TeacherFeedback["Teacher Feedback"]
+    StudentFeedback --> Results["Interpret Results"]
+    TeacherFeedback --> Results
+    n1["Quiz Format LLM:<br>- 2 Single Answer<br>- 2 Multiple Choice <br> - 2 Open-Ended"]
+    n1@{ shape: rect}
+     Generation:::largeText
+     GenTypes:::largeText
+     Easy:::largeText
+     Intermediate:::largeText
+     Advanced:::largeText
+     QuizAssembly:::largeText
+     QuizLevel1:::quiz
+     QuizLevel1:::largeText
+     QuizLevel2:::quiz
+     QuizLevel2:::largeText
+     QuizLevel3:::quiz
+     QuizLevel3:::largeText
+     RecruitTeachers:::largeText
+     RefineSelection:::largeText
+     TeacherTesting:::largeText
+     StudentTesting:::largeText
+     StudentFeedback:::largeText
+     TeacherFeedback:::largeText
+     Results:::largeText
+     n1:::largeText
+    classDef default fill:#f8f9fa,stroke:#333,stroke-width:1px,rx:5px,ry:5px
+    classDef special fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,rx:25px,ry:25px
+    classDef quiz fill:#f3f9ff,stroke:#0d47a1,stroke-width:2px,rx:5px,ry:5px
+    classDef subgraphStyle fill:none,stroke:#666,stroke-width:1px,stroke-dasharray:5
+    classDef largeText font-size:20px, font-weight:bold
+
