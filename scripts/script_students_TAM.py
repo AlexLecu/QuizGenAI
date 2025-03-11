@@ -110,7 +110,7 @@ def visualize_likert_survey(
 
 
 if __name__ == "__main__":
-    excel_path = ""
+    excel_path = "../data/Students/Students_TAM.xlsx"
 
     visualize_likert_survey(
         excel_file_path=excel_path,

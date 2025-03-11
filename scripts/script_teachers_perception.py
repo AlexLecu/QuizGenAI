@@ -2,10 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data_path_1 = ""
-data_path_2 = ""
-data_path_3 = ""
-
+data_path_1 = "../data/Teachers/teachers_perception_copilot.xlsx"
+data_path_2 = "../data/Teachers/teachers_perception_gpt.xlsx"
+data_path_3 = "../data/Teachers/teachers_perception_claude.xlsx"
 
 def process_excel(file_path):
     df = pd.read_excel(file_path, index_col=0)

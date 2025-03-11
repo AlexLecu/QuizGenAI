@@ -48,5 +48,5 @@ def create_heatmap_from_excel(file_path):
     plt.show()
 
 
-file_path = ""
+file_path = "../data/Teachers/teachers_questions.xlsx"
 create_heatmap_from_excel(file_path)
