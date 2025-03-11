@@ -35,14 +35,18 @@ def create_heatmap_from_excel(file_path):
         annot=True,
         cmap="YlGnBu",
         fmt=".1f",
-        linewidths=0.5
+        linewidths=0.5,
+        annot_kws={"size": 14}
     )
 
     plt.title("")
     plt.xlabel("")
     plt.ylabel("")
-    plt.xticks(rotation=45, ha="right", fontsize=12)
-    plt.yticks(fontsize=12)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+
+    cbar = ax.collections[0].colorbar
+    cbar.ax.tick_params(labelsize=14)
 
     plt.tight_layout()
     plt.show()
