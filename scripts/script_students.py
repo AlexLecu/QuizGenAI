@@ -1,7 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-PATH = ""
+PATH = "../data/Students/students_answers_copilot.xlsx"
+# PATH = "../data/Students/students_answers_gpt.xlsx"
+# PATH = "../data/Students/students_answers_claude.xlsx"
 
 survey_data = pd.read_excel(PATH)
 

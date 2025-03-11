@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.colors as mcolors
 
-PATH = ""
+PATH = "../data/Students/students_perception_copilot.xlsx"
+# PATH = "../data/Students/students_perception_gpt.xlsx"
+# PATH = "../data/Students/students_perception_claude.xlsx"
 
 df = pd.read_excel(
     PATH,
