@@ -88,6 +88,7 @@ def visualize_likert_survey(
                 print(f"[WARNING] '{question}' has {total} total responses, expected {expected_respondents}.")
 
     sns.set_style("whitegrid")
+    sns.set_context("talk")
     custom_colors = [
         "#d73027",
         "#fc8d59",
@@ -102,7 +103,7 @@ def visualize_likert_survey(
 
     plt.title("")
     plt.xlabel("")
-    plt.ylabel("Number of Responses", fontsize=12)
+    plt.ylabel("Number of Responses")
     plt.xticks(rotation=45, ha="right")
     plt.legend(title="Response", bbox_to_anchor=(1.05, 1), loc="upper left")
     plt.tight_layout()
